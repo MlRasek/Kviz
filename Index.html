@@ -43,13 +43,7 @@
     opacity: 0.5;
   }
 
-  header {
-    width: 100%;
-    max-width: 680px;
-    padding: 32px 24px 16px;
-    position: relative;
-    z-index: 1;
-  }
+  header { width: 100%; max-width: 680px; padding: 28px 24px 12px; position: relative; z-index: 1; }
 
   .logo {
     font-family: 'Playfair Display', serif;
@@ -62,18 +56,13 @@
     gap: 10px;
   }
 
-  .logo::before, .logo::after {
-    content: '';
-    height: 1px;
-    background: var(--line);
-    flex: 1;
-  }
+  .logo::before, .logo::after { content: ''; height: 1px; background: var(--line); flex: 1; }
 
   .stats {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     justify-content: center;
-    padding: 12px 24px;
+    padding: 10px 24px;
     max-width: 680px;
     width: 100%;
     z-index: 1;
@@ -87,7 +76,7 @@
     color: var(--muted);
     background: var(--cream);
     border: 1px solid var(--line);
-    padding: 5px 14px;
+    padding: 4px 12px;
     border-radius: 20px;
   }
 
@@ -101,466 +90,255 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
   }
 
-  #setup-screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    padding: 40px 0;
-    text-align: center;
-  }
-
-  #setup-screen h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-  }
-
+  #setup-screen { display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 40px 0; text-align: center; }
+  #setup-screen h2 { font-family: 'Playfair Display', serif; font-size: 32px; }
   #setup-screen h2 em { font-style: italic; color: var(--accent); }
+  #setup-screen p { font-size: 14px; color: var(--muted); max-width: 340px; line-height: 1.7; }
 
-  #setup-screen p {
-    font-size: 14px;
-    color: var(--muted);
-    max-width: 340px;
-    line-height: 1.7;
-  }
-
-  .key-input-row {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    max-width: 420px;
-  }
+  .key-input-row { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 420px; }
 
   .key-input {
-    border: 2px solid var(--line);
-    border-radius: 6px;
-    padding: 14px 16px;
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    background: white;
-    color: var(--ink);
-    outline: none;
-    width: 100%;
-    -webkit-appearance: none;
+    border: 2px solid var(--line); border-radius: 6px; padding: 14px 16px;
+    font-family: 'DM Mono', monospace; font-size: 13px;
+    background: white; color: var(--ink); outline: none; width: 100%; -webkit-appearance: none;
   }
 
   .key-input:focus { border-color: var(--ink); }
 
   .key-btn {
-    padding: 15px;
-    background: var(--ink);
-    color: var(--paper);
-    border: none;
-    border-radius: 6px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.2s;
-    -webkit-appearance: none;
+    padding: 15px; background: var(--ink); color: var(--paper);
+    border: none; border-radius: 6px; font-family: 'DM Sans', sans-serif;
+    font-size: 15px; font-weight: 500; cursor: pointer; -webkit-appearance: none;
   }
 
   .key-btn:active { background: var(--accent); }
 
-  #wake-screen {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-    padding: 40px 0;
-    text-align: center;
-  }
+  #wake-screen { display: none; flex-direction: column; align-items: center; gap: 28px; padding: 32px 0; text-align: center; }
 
-  .title-block h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(44px, 11vw, 68px);
-    line-height: 1;
-    color: var(--ink);
-  }
-
+  .title-block h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 10vw, 62px); line-height: 1; color: var(--ink); }
   .title-block h1 em { font-style: italic; color: var(--accent); }
-
-  .title-block p {
-    font-size: 15px;
-    color: var(--muted);
-    margin-top: 14px;
-    font-weight: 300;
-    line-height: 1.65;
-  }
+  .title-block p { font-size: 14px; color: var(--muted); margin-top: 12px; font-weight: 300; line-height: 1.6; }
 
   .review-badge {
     background: linear-gradient(135deg, #c9a84c, #e8b84b);
-    color: white;
-    padding: 10px 22px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 500;
-    display: none;
-    text-align: center;
-    width: 100%;
-    max-width: 340px;
+    color: white; padding: 10px 22px; border-radius: 6px;
+    font-size: 13px; font-weight: 500; display: none; text-align: center;
+    width: 100%; max-width: 360px;
   }
 
   .review-badge.show { display: block; }
 
-  .mic-ring {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: var(--cream);
-    border: 2px solid var(--line);
+  .topic-section { width: 100%; max-width: 500px; }
+
+  .topic-section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    cursor: pointer;
-    transition: all 0.25s;
+    gap: 8px;
   }
 
-  .mic-ring.listening {
-    border-color: var(--accent);
-    animation: pulse-ring 1.4s ease-out infinite;
+  .topic-section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+
+  .topic-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
   }
+
+  .topic-chip {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    padding: 7px 14px;
+    border-radius: 20px;
+    border: 1.5px solid var(--line);
+    background: white;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.18s;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .topic-chip.active {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+
+  .topic-chip:active { transform: scale(0.95); }
+
+  .select-all-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    text-decoration: underline;
+    padding: 4px 0;
+  }
+
+  .mic-ring {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--cream); border: 2px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; cursor: pointer; transition: all 0.25s;
+  }
+
+  .mic-ring.listening { border-color: var(--accent); animation: pulse-ring 1.4s ease-out infinite; }
 
   @keyframes pulse-ring {
     0%   { box-shadow: 0 0 0 0 rgba(192,57,43,0.35); }
-    70%  { box-shadow: 0 0 0 22px rgba(192,57,43,0); }
+    70%  { box-shadow: 0 0 0 20px rgba(192,57,43,0); }
     100% { box-shadow: 0 0 0 0 rgba(192,57,43,0); }
   }
 
-  .wake-hint p {
-    font-size: 12px;
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    margin-top: 10px;
-    letter-spacing: 0.05em;
-  }
+  .wake-hint p { font-size: 12px; color: var(--muted); font-family: 'DM Mono', monospace; margin-top: 8px; letter-spacing: 0.05em; }
 
   .start-btn {
-    background: var(--ink);
-    color: var(--paper);
-    border: none;
-    padding: 15px 40px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    cursor: pointer;
-    border-radius: 6px;
-    -webkit-appearance: none;
+    background: var(--ink); color: var(--paper); border: none;
+    padding: 15px 40px; font-family: 'DM Sans', sans-serif;
+    font-size: 16px; font-weight: 500; cursor: pointer; border-radius: 6px; -webkit-appearance: none;
   }
 
   .start-btn:active { background: var(--accent); }
 
   .change-key-btn {
-    font-size: 12px;
-    color: var(--muted);
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: 'DM Mono', monospace;
-    letter-spacing: 0.05em;
-    text-decoration: underline;
-    padding: 0;
+    font-size: 12px; color: var(--muted); background: none; border: none;
+    cursor: pointer; font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em; text-decoration: underline; padding: 0;
   }
 
-  #quiz-screen { display: none; flex-direction: column; gap: 16px; }
+  #quiz-screen { display: none; flex-direction: column; gap: 14px; }
   #quiz-screen.active { display: flex; }
 
-  .question-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 8px;
-  }
+  .question-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 6px; }
 
-  .q-number {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-  }
+  .q-number { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); letter-spacing: 0.1em; }
 
   .q-category {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--gold);
-    font-weight: 500;
-    background: rgba(201,168,76,0.1);
-    padding: 3px 10px;
-    border-radius: 12px;
-    border: 1px solid rgba(201,168,76,0.3);
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--gold); font-weight: 500;
+    background: rgba(201,168,76,0.1); padding: 3px 10px;
+    border-radius: 12px; border: 1px solid rgba(201,168,76,0.3);
+    max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   }
 
-  .q-category.review {
-    color: var(--accent);
-    background: rgba(192,57,43,0.08);
-    border-color: rgba(192,57,43,0.25);
-  }
+  .q-category.review { color: var(--accent); background: rgba(192,57,43,0.08); border-color: rgba(192,57,43,0.25); }
 
   .question-box {
-    background: white;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 28px 22px;
-    box-shadow: var(--shadow);
-    position: relative;
-    overflow: hidden;
-    min-height: 90px;
+    background: white; border: 1px solid var(--line); border-radius: 8px;
+    padding: 26px 22px; box-shadow: var(--shadow);
+    position: relative; overflow: hidden; min-height: 80px;
   }
 
   .question-box::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
     background: linear-gradient(90deg, var(--accent), var(--gold));
   }
 
-  .question-text {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(17px, 4.5vw, 22px);
-    line-height: 1.55;
-    color: var(--ink);
-  }
+  .question-text { font-family: 'Playfair Display', serif; font-size: clamp(16px, 4.2vw, 21px); line-height: 1.55; color: var(--ink); }
 
-  .loading {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    padding: 32px;
-    text-align: center;
-  }
-
+  .loading { display: none; flex-direction: column; align-items: center; gap: 12px; padding: 28px; text-align: center; }
   .loading.active { display: flex; }
 
   .spinner {
-    width: 34px;
-    height: 34px;
-    border: 2px solid var(--line);
-    border-top-color: var(--accent);
-    border-radius: 50%;
-    animation: spin 0.75s linear infinite;
+    width: 32px; height: 32px;
+    border: 2px solid var(--line); border-top-color: var(--accent);
+    border-radius: 50%; animation: spin 0.75s linear infinite;
   }
 
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  .loading p {
-    font-size: 13px;
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    letter-spacing: 0.04em;
-  }
+  .loading p { font-size: 13px; color: var(--muted); font-family: 'DM Mono', monospace; }
 
-  .answer-area {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .answer-row {
-    display: flex;
-    gap: 10px;
-    align-items: stretch;
-  }
+  .answer-area { display: flex; flex-direction: column; gap: 10px; }
+  .answer-row { display: flex; gap: 10px; align-items: stretch; }
 
   .answer-input {
-    flex: 1;
-    border: 2px solid var(--line);
-    border-radius: 6px;
-    padding: 14px 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    background: white;
-    color: var(--ink);
-    outline: none;
-    transition: border-color 0.2s;
-    -webkit-appearance: none;
+    flex: 1; border: 2px solid var(--line); border-radius: 6px;
+    padding: 14px 16px; font-family: 'DM Sans', sans-serif; font-size: 16px;
+    background: white; color: var(--ink); outline: none; -webkit-appearance: none;
   }
 
   .answer-input:focus { border-color: var(--ink); }
   .answer-input::placeholder { color: #b8b0a0; }
 
   .mic-btn {
-    width: 52px;
-    height: 52px;
-    border-radius: 6px;
-    border: 2px solid var(--line);
-    background: white;
-    font-size: 22px;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    width: 52px; height: 52px; border-radius: 6px; border: 2px solid var(--line);
+    background: white; font-size: 22px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
 
-  .mic-btn.listening {
-    border-color: var(--accent);
-    background: rgba(192,57,43,0.06);
-    animation: pulse-ring 1.4s ease-out infinite;
-  }
+  .mic-btn.listening { border-color: var(--accent); background: rgba(192,57,43,0.06); animation: pulse-ring 1.4s ease-out infinite; }
 
   .submit-btn {
-    width: 100%;
-    padding: 16px;
-    background: var(--ink);
-    color: var(--paper);
-    border: none;
-    border-radius: 6px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    letter-spacing: 0.03em;
-    -webkit-appearance: none;
+    width: 100%; padding: 16px; background: var(--ink); color: var(--paper);
+    border: none; border-radius: 6px; font-family: 'DM Sans', sans-serif;
+    font-size: 16px; font-weight: 500; cursor: pointer; -webkit-appearance: none;
   }
 
   .submit-btn:active { background: var(--accent); }
   .submit-btn:disabled { opacity: 0.45; cursor: not-allowed; }
 
-  .result-card {
-    border-radius: 8px;
-    padding: 20px 20px;
-    border: 1px solid transparent;
-    display: none;
-    animation: slide-up 0.3s ease;
-  }
+  .result-card { border-radius: 8px; padding: 18px 20px; border: 1px solid transparent; display: none; animation: slide-up 0.3s ease; }
 
-  @keyframes slide-up {
-    from { opacity: 0; transform: translateY(10px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes slide-up { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
 
-  .result-card.correct {
-    background: rgba(45,106,79,0.07);
-    border-color: rgba(45,106,79,0.25);
-    display: block;
-  }
+  .result-card.correct { background: rgba(45,106,79,0.07); border-color: rgba(45,106,79,0.25); display: block; }
+  .result-card.wrong   { background: rgba(192,57,43,0.05); border-color: rgba(192,57,43,0.2);  display: block; }
 
-  .result-card.wrong {
-    background: rgba(192,57,43,0.05);
-    border-color: rgba(192,57,43,0.2);
-    display: block;
-  }
-
-  .result-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-
+  .result-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
   .result-icon { font-size: 22px; }
   .result-label { font-weight: 600; font-size: 15px; }
   .result-card.correct .result-label { color: var(--green); }
-  .result-card.wrong  .result-label { color: var(--accent); }
+  .result-card.wrong   .result-label { color: var(--accent); }
 
-  .correct-answer {
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    color: var(--ink);
-    margin-bottom: 12px;
-  }
+  .correct-answer { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--ink); margin-bottom: 12px; }
 
-  .fun-fact {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.65;
-    padding-top: 12px;
-    border-top: 1px solid var(--line);
-  }
+  .fun-fact { font-size: 14px; color: var(--muted); line-height: 1.65; padding-top: 12px; border-top: 1px solid var(--line); }
 
-  .mnemonic-box {
-    margin-top: 12px;
-    background: rgba(201,168,76,0.1);
-    border: 1px solid rgba(201,168,76,0.3);
-    border-radius: 6px;
-    padding: 14px 16px;
-  }
-
-  .mnemonic-label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--gold);
-    font-weight: 600;
-    margin-bottom: 6px;
-  }
-
-  .mnemonic-text {
-    font-size: 14px;
-    line-height: 1.65;
-    color: var(--ink);
-    font-style: italic;
-  }
+  .mnemonic-box { margin-top: 12px; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); border-radius: 6px; padding: 14px 16px; }
+  .mnemonic-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); font-weight: 600; margin-bottom: 6px; }
+  .mnemonic-text { font-size: 14px; line-height: 1.65; color: var(--ink); font-style: italic; }
 
   .next-btn {
-    width: 100%;
-    padding: 15px;
-    background: white;
-    color: var(--ink);
-    border: 2px solid var(--ink);
-    border-radius: 6px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    display: none;
-    -webkit-appearance: none;
+    width: 100%; padding: 15px; background: white; color: var(--ink);
+    border: 2px solid var(--ink); border-radius: 6px; font-family: 'DM Sans', sans-serif;
+    font-size: 15px; font-weight: 500; cursor: pointer; display: none; -webkit-appearance: none;
   }
 
   .next-btn.show { display: block; }
   .next-btn:active { background: var(--ink); color: var(--paper); }
 
   .status-bar {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    background: var(--ink);
-    color: var(--paper);
-    padding: 12px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    transform: translateY(100%);
-    transition: transform 0.3s;
-    z-index: 100;
-    letter-spacing: 0.05em;
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--ink); color: var(--paper);
+    padding: 12px 20px; display: flex; align-items: center; justify-content: center; gap: 10px;
+    font-family: 'DM Mono', monospace; font-size: 12px;
+    transform: translateY(100%); transition: transform 0.3s; z-index: 100;
   }
 
   .status-bar.show { transform: translateY(0); }
 
-  .status-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: blink 1s ease-in-out infinite;
-    flex-shrink: 0;
-  }
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: blink 1s ease-in-out infinite; flex-shrink: 0; }
 
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
 
   .error-box {
-    background: rgba(192,57,43,0.08);
-    border: 1px solid rgba(192,57,43,0.25);
-    border-radius: 6px;
-    padding: 14px 16px;
-    font-size: 14px;
-    color: var(--accent);
-    display: none;
-    line-height: 1.6;
-    white-space: pre-line;
+    background: rgba(192,57,43,0.08); border: 1px solid rgba(192,57,43,0.25);
+    border-radius: 6px; padding: 14px 16px; font-size: 14px; color: var(--accent);
+    display: none; line-height: 1.6; white-space: pre-line;
   }
 
   .error-box.show { display: block; }
@@ -568,9 +346,7 @@
 </head>
 <body>
 
-<header>
-  <div class="logo">Trénink mozku</div>
-</header>
+<header><div class="logo">Trénink mozku</div></header>
 
 <div class="stats">
   <div class="stat-pill">Dnes: <span id="stat-today">0</span></div>
@@ -600,6 +376,13 @@
       <h1>Kvíz<em>ový</em><br>trenér</h1>
       <p>Trénuj každý den.<br>Špatné odpovědi se opakují, dokud si je nezapamatuješ.</p>
     </div>
+    <div class="topic-section">
+      <div class="topic-section-label">Vyber témata</div>
+      <div class="topic-grid" id="topic-grid"></div>
+      <div style="text-align:center;margin-top:10px">
+        <button class="select-all-btn" id="select-all-btn">vybrat vše</button>
+      </div>
+    </div>
     <div class="wake-hint">
       <div class="mic-ring" id="wake-mic">🎙️</div>
       <p>Řekni „kvíz" nebo klikni níže</p>
@@ -613,18 +396,14 @@
       <span class="q-number" id="q-number">Otázka 1</span>
       <span class="q-category" id="q-category">—</span>
     </div>
-
     <div class="question-box">
       <div class="question-text" id="question-text"></div>
     </div>
-
     <div class="loading" id="loading">
       <div class="spinner"></div>
       <p id="loading-msg">Generuji otázku…</p>
     </div>
-
     <div class="error-box" id="error-box"></div>
-
     <div class="answer-area" id="answer-area" style="display:none">
       <div class="answer-row">
         <input type="text" class="answer-input" id="answer-input"
@@ -634,7 +413,6 @@
       </div>
       <button class="submit-btn" id="submit-btn">Odpovědět</button>
     </div>
-
     <div class="result-card" id="result-card">
       <div class="result-header">
         <span class="result-icon" id="result-icon"></span>
@@ -647,7 +425,6 @@
         <div class="mnemonic-text" id="mnemonic-text"></div>
       </div>
     </div>
-
     <button class="next-btn" id="next-btn">Další otázka →</button>
   </div>
 
@@ -661,23 +438,62 @@
 <script>
 'use strict';
 
-const STORE    = 'kviz_v3';
+const STORE    = 'kviz_v4';
 const KEY_NAME = 'karel_key';
-const API_URL  = 'https://api.anthropic.com/v1/messages';
+const API_URL  = '/.netlify/functions/claude';
 const MODEL    = 'claude-sonnet-4-20250514';
-const CATS     = ['Historie','Věda','Geografie','Kultura','Sport','Příroda','Technologie','Umění','Literatura','Astronomie'];
+
+const ALL_TOPICS = [
+  { id:'dejiny',      label:'🏛️ Dějiny světa' },
+  { id:'cesko',       label:'🇨🇿 České dějiny' },
+  { id:'zemepisS',    label:'🌍 Zeměpis světa' },
+  { id:'zemepisE',    label:'🗺️ Zeměpis Evropy' },
+  { id:'vesmir',      label:'🔭 Vesmír' },
+  { id:'priroda',     label:'🌿 Příroda & biologie' },
+  { id:'kultura',     label:'🎭 Světová kultura' },
+  { id:'umeni',       label:'🎨 Umění & architektura' },
+  { id:'hudba',       label:'🎵 Hudba' },
+  { id:'film',        label:'🎬 Film & divadlo' },
+  { id:'literatura',  label:'📚 Literatura' },
+  { id:'filozofie',   label:'💭 Filozofie & náboženství' },
+  { id:'sport',       label:'⚽ Sport' },
+  { id:'olympiada',   label:'🏅 Olympiáda & rekordy' },
+  { id:'gastronomie', label:'🍷 Gastronomie světa' },
+  { id:'politika',    label:'🌐 Státy & politika' },
+  { id:'mytologie',   label:'⚡ Mytologie' },
+  { id:'vynalezy',    label:'💡 Vynálezy & objevy' },
+];
+
+const TOPIC_PROMPTS = {
+  dejiny:     'světové dějiny, války, říše, historické události a osobnosti',
+  cesko:      'české a československé dějiny, osobnosti, události',
+  zemepisS:   'světový zeměpis — hlavní města, řeky, hory, kontinenty, moře',
+  zemepisE:   'evropský zeměpis — státy, hlavní města, řeky, pohoří',
+  vesmir:     'astronomie, planety, hvězdy, vesmírné mise, fyzika vesmíru',
+  priroda:    'biologie, zvířata, rostliny, ekosystémy, přírodní jevy',
+  kultura:    'světová kultura, tradice, svátky, civilizace',
+  umeni:      'výtvarné umění, malíři, sochaři, architektura, slavné stavby',
+  hudba:      'hudba — skladatelé, kapely, žánry, hudební nástroje, slavné skladby',
+  film:       'film, divadlo, herci, režiséři, slavná díla',
+  literatura: 'literatura — spisovatelé, romány, básníci, literární díla',
+  filozofie:  'filozofie, filozofové, světová náboženství a jejich historie',
+  sport:      'sport — fotbal, tenis, atletika, hokej, plavání a jiné sporty',
+  olympiada:  'olympijské hry, olympijští vítězové, světové rekordy',
+  gastronomie:'světová kuchyně, jídla, nápoje, kulinářské tradice',
+  politika:   'státy světa, hlavy států, politické systémy, mezinárodní organizace',
+  mytologie:  'řecká, římská, severská a jiná světová mytologie',
+  vynalezy:   'vynálezy, vědci, objevy, průkopníci vědy a techniky',
+};
 
 let apiKey = '';
-let db = { todayDate:'', todayCount:0, todayCorrect:0, wrongAnswers:[] };
-let currentQ   = null;
-let qIndex     = 0;
-let submitted  = false;
-let wakeSR     = null, wakeSROn  = false;
-let answerSR   = null, answerSROn = false;
+let db = { todayDate:'', todayCount:0, todayCorrect:0, wrongAnswers:[], askedQuestions:[], activeTopics:null };
+let currentQ = null, qIndex = 0, submitted = false;
+let wakeSR = null, wakeSROn = false;
+let answerSR = null, answerSROn = false;
 
 const $ = id => document.getElementById(id);
-const show  = (id,v) => $(id).style.display = v;
-const cls   = (id,c,on) => $(id).classList[on?'add':'remove'](c);
+const show = (id,v) => $(id).style.display = v;
+const cls  = (id,c,on) => $(id).classList[on?'add':'remove'](c);
 
 function showScreen(n) {
   $('setup-screen').style.display = n==='setup' ? 'flex' : 'none';
@@ -694,28 +510,50 @@ function loadDB() {
   try { const r=localStorage.getItem(STORE); if(r) Object.assign(db,JSON.parse(r)); } catch(e){}
   const today = new Date().toISOString().slice(0,10);
   if(db.todayDate!==today){ db.todayDate=today; db.todayCount=0; db.todayCorrect=0; }
+  if(!db.askedQuestions) db.askedQuestions=[];
+  if(!db.wrongAnswers)   db.wrongAnswers=[];
 }
-function saveDB() { try{localStorage.setItem(STORE,JSON.stringify(db));}catch(e){} }
+function saveDB() { try{ localStorage.setItem(STORE,JSON.stringify(db)); }catch(e){} }
 function updateStats() {
   $('stat-today').textContent   = db.todayCount;
   $('stat-correct').textContent = db.todayCorrect;
   $('stat-review').textContent  = db.wrongAnswers.length;
 }
 
+function buildTopicGrid() {
+  const grid = $('topic-grid');
+  grid.innerHTML = '';
+  const active = db.activeTopics || ALL_TOPICS.map(t=>t.id);
+  ALL_TOPICS.forEach(t => {
+    const chip = document.createElement('button');
+    chip.className = 'topic-chip' + (active.includes(t.id) ? ' active' : '');
+    chip.textContent = t.label;
+    chip.dataset.id = t.id;
+    chip.addEventListener('click', () => { chip.classList.toggle('active'); saveTopics(); });
+    grid.appendChild(chip);
+  });
+}
+
+function saveTopics() {
+  const active = [...document.querySelectorAll('.topic-chip.active')].map(c=>c.dataset.id);
+  db.activeTopics = active.length > 0 ? active : ALL_TOPICS.map(t=>t.id);
+  saveDB();
+}
+
+function getRandomTopic() {
+  const active = db.activeTopics && db.activeTopics.length > 0 ? db.activeTopics : ALL_TOPICS.map(t=>t.id);
+  return active[Math.floor(Math.random()*active.length)];
+}
+
 async function callClaude(system, user, maxT) {
   const r = await fetch(API_URL, {
     method: 'POST',
-    headers: {
-      'Content-Type':    'application/json',
-      'x-api-key':       apiKey,
-      'anthropic-version':'2023-06-01',
-      'anthropic-dangerous-direct-browser-access': 'true'
-    },
+    headers: { 'Content-Type':'application/json', 'x-api-key': apiKey },
     body: JSON.stringify({ model:MODEL, max_tokens:maxT||700, system, messages:[{role:'user',content:user}] })
   });
   if(!r.ok){
     let msg='HTTP '+r.status;
-    try{const e=await r.json();msg=e.error?.message||msg;}catch(x){}
+    try{ const e=await r.json(); msg=e.error?.message||msg; }catch(x){}
     throw new Error(msg);
   }
   const d = await r.json();
@@ -729,15 +567,21 @@ async function genQuestion(rev) {
   if(rev){
     msg = `Otázka "${rev.question}" (správně: "${rev.correctAnswer}") byla zodpovězena špatně. Vytvoř NOVOU příbuznou otázku ze stejného tématu. Kategorie: ${rev.category}.`;
   } else {
-    const c = CATS[Math.floor(Math.random()*CATS.length)];
-    msg = `Vytvoř jednu faktickou kvízovou otázku ze všeobecných znalostí. Kategorie: ${c}. Odpověď 1-5 slov. Střední obtížnost.`;
+    const topicId = getRandomTopic();
+    const topicPrompt = TOPIC_PROMPTS[topicId] || topicId;
+    const avoid = db.askedQuestions.slice(-40).join(' | ');
+    msg = `Vytvoř jednu faktickou kvízovou otázku ze všeobecných znalostí.
+Téma: ${topicPrompt}.
+Odpověď musí být stručná (1–5 slov). Střední obtížnost.
+DŮLEŽITÉ: Vyhni se otázkám z počítačů, IT, programování a technologií.
+${avoid ? `Tato témata již byla použita — nevytvárej podobné otázky: ${avoid}` : ''}`;
   }
   return JSON.parse(await callClaude(sys,msg,600));
 }
 
 async function evalAnswer(q, ans) {
   const sys = 'Jsi hodnotitel kvízových odpovědí. Odpovídej VÝHRADNĚ validním JSON objektem bez markdown.\nFormát: {"correct":true/false,"mnemonic":"pomůcka nebo null","fun_fact":"2-3 věty"}';
-  const al  = (q.aliases||[]).join(', ');
+  const al = (q.aliases||[]).join(', ');
   const msg = `Otázka: "${q.question}"\nSprávná odpověď: "${q.answer}"${al?` (nebo: ${al})`:''}\nUživatelova odpověď: "${ans}"\nUrči správnost (toleruj překlepy, synonyma). Pokud špatně, vytvoř vtipnou/vizuální mnemotechnickou pomůcku česky.`;
   return JSON.parse(await callClaude(sys,msg,400));
 }
@@ -749,18 +593,13 @@ function pickReview() {
 }
 
 async function loadQ() {
-  submitted = false;
-  qIndex++;
-  $('result-card').className = 'result-card';
-  $('next-btn').className    = 'next-btn';
-  show('answer-area','none');
-  $('answer-input').value    = '';
-  $('question-text').textContent = '';
-  $('submit-btn').disabled   = true;
-  hideErr();
-  cls('loading','active',true);
-  $('loading-msg').textContent = 'Generuji otázku…';
-  $('q-number').textContent  = 'Otázka '+qIndex;
+  submitted = false; qIndex++;
+  $('result-card').className='result-card'; $('next-btn').className='next-btn';
+  show('answer-area','none'); $('answer-input').value='';
+  $('question-text').textContent=''; $('submit-btn').disabled=true;
+  hideErr(); cls('loading','active',true);
+  $('loading-msg').textContent='Generuji otázku…';
+  $('q-number').textContent='Otázka '+qIndex;
 
   const rev = pickReview();
   try {
@@ -770,16 +609,12 @@ async function loadQ() {
     $('question-text').textContent = q.question;
     const ce = $('q-category');
     ce.textContent = q.category||'—';
-    ce.className   = rev ? 'q-category review' : 'q-category';
-    show('answer-area','flex');
-    $('submit-btn').disabled = false;
-    $('answer-input').focus();
+    ce.className = rev ? 'q-category review' : 'q-category';
+    show('answer-area','flex'); $('submit-btn').disabled=false; $('answer-input').focus();
   } catch(e) {
     cls('loading','active',false);
-    showErr('Nepodařilo se načíst otázku.\n' + e.message);
-    $('next-btn').textContent = 'Zkusit znovu →';
-    $('next-btn').className   = 'next-btn show';
-    console.error(e);
+    showErr('Nepodařilo se načíst otázku.\n'+e.message);
+    $('next-btn').textContent='Zkusit znovu →'; $('next-btn').className='next-btn show';
   }
 }
 
@@ -787,26 +622,17 @@ async function doSubmit() {
   if(submitted) return;
   const ans = $('answer-input').value.trim();
   if(!ans) return;
-  submitted = true;
-  $('submit-btn').disabled = true;
-  stopASR();
-  showStatus('Vyhodnocuji…');
-  cls('loading','active',true);
-  $('loading-msg').textContent = 'Vyhodnocuji…';
+  submitted=true; $('submit-btn').disabled=true;
+  stopASR(); showStatus('Vyhodnocuji…');
+  cls('loading','active',true); $('loading-msg').textContent='Vyhodnocuji…';
   show('answer-area','none');
 
   let result;
-  try {
-    result = await evalAnswer(currentQ, ans);
-  } catch(e) {
-    result = { correct: localCheck(currentQ,ans), mnemonic:null, fun_fact: currentQ.fun_fact||'' };
-    console.warn('eval fallback:',e);
-  }
+  try { result = await evalAnswer(currentQ, ans); }
+  catch(e) { result = { correct:localCheck(currentQ,ans), mnemonic:null, fun_fact:currentQ.fun_fact||'' }; }
 
-  cls('loading','active',false);
-  hideStatus();
-  renderResult(result);
-  record(result.correct);
+  cls('loading','active',false); hideStatus();
+  renderResult(result); record(result.correct);
 }
 
 function localCheck(q,ans) {
@@ -817,35 +643,34 @@ function localCheck(q,ans) {
 }
 
 function renderResult(r) {
-  const card = $('result-card');
-  if(r.correct) {
-    card.className='result-card correct';
-    $('result-icon').textContent ='✅';
-    $('result-label').textContent='Správně!';
-    show('correct-answer','none');
-    show('mnemonic-box','none');
+  if(r.correct){
+    $('result-card').className='result-card correct';
+    $('result-icon').textContent='✅'; $('result-label').textContent='Správně!';
+    show('correct-answer','none'); show('mnemonic-box','none');
   } else {
-    card.className='result-card wrong';
-    $('result-icon').textContent ='❌';
-    $('result-label').textContent='Špatně';
+    $('result-card').className='result-card wrong';
+    $('result-icon').textContent='❌'; $('result-label').textContent='Špatně';
     show('correct-answer','block');
     $('correct-answer').textContent='Správná odpověď: '+currentQ.answer;
     if(r.mnemonic){ show('mnemonic-box','block'); $('mnemonic-text').textContent=r.mnemonic; }
     else show('mnemonic-box','none');
   }
-  $('fun-fact').textContent = r.fun_fact||currentQ.fun_fact||'';
-  $('next-btn').textContent = 'Další otázka →';
-  $('next-btn').className   = 'next-btn show';
+  $('fun-fact').textContent=r.fun_fact||currentQ.fun_fact||'';
+  $('next-btn').textContent='Další otázka →'; $('next-btn').className='next-btn show';
 }
 
 function record(correct) {
   db.todayCount++;
   if(correct){
     db.todayCorrect++;
+    if(currentQ && !db.askedQuestions.includes(currentQ.question)){
+      db.askedQuestions.push(currentQ.question);
+      if(db.askedQuestions.length>300) db.askedQuestions.shift();
+    }
     db.wrongAnswers = db.wrongAnswers.filter(w=>w.question!==currentQ.question);
   } else {
-    const today = new Date().toISOString().slice(0,10);
-    const ex = db.wrongAnswers.find(w=>w.question===currentQ.question);
+    const today=new Date().toISOString().slice(0,10);
+    const ex=db.wrongAnswers.find(w=>w.question===currentQ.question);
     if(ex){ ex.askedCount=(ex.askedCount||0)+1; ex.lastAsked=today; }
     else db.wrongAnswers.push({question:currentQ.question,correctAnswer:currentQ.answer,category:currentQ.category,askedCount:1,lastAsked:today});
   }
@@ -853,21 +678,17 @@ function record(correct) {
 }
 
 function setupWSR() {
-  const SR = window.SpeechRecognition||window.webkitSpeechRecognition;
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
   if(!SR) return;
-  wakeSR = new SR();
-  wakeSR.lang='cs-CZ'; wakeSR.continuous=true; wakeSR.interimResults=false;
-  wakeSR.onresult = e => {
-    const t=e.results[e.results.length-1][0].transcript.trim().toLowerCase();
-    if(t.includes('kvíz')||t.includes('kviz')){ stopWSR(); startQuiz(); }
-  };
-  wakeSR.onerror = ()=>{ wakeSROn=false; cls('wake-mic','listening',false); };
-  wakeSR.onend   = ()=>{ if(wakeSROn) try{wakeSR.start();}catch(e){} };
+  wakeSR=new SR(); wakeSR.lang='cs-CZ'; wakeSR.continuous=true; wakeSR.interimResults=false;
+  wakeSR.onresult=e=>{ const t=e.results[e.results.length-1][0].transcript.trim().toLowerCase(); if(t.includes('kvíz')||t.includes('kviz')){ stopWSR(); startQuiz(); } };
+  wakeSR.onerror=()=>{ wakeSROn=false; cls('wake-mic','listening',false); };
+  wakeSR.onend=()=>{ if(wakeSROn) try{wakeSR.start();}catch(e){} };
 }
 
 function startWSR() {
-  if(!wakeSR){alert('Hlasové rozpoznávání není dostupné.');return;}
-  try{wakeSR.start();wakeSROn=true;cls('wake-mic','listening',true);showStatus('Čekám na „kvíz"…');}catch(e){}
+  if(!wakeSR){ alert('Hlasové rozpoznávání není dostupné.'); return; }
+  try{ wakeSR.start(); wakeSROn=true; cls('wake-mic','listening',true); showStatus('Čekám na „kvíz"…'); }catch(e){}
 }
 
 function stopWSR() {
@@ -876,24 +697,20 @@ function stopWSR() {
 }
 
 function startASR() {
-  const SR = window.SpeechRecognition||window.webkitSpeechRecognition;
-  if(!SR){alert('Hlasové rozpoznávání není dostupné.');return;}
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){ alert('Hlasové rozpoznávání není dostupné.'); return; }
   if(answerSR) try{answerSR.stop();}catch(e){}
   answerSR=new SR(); answerSR.lang='cs-CZ'; answerSR.continuous=false; answerSR.interimResults=true;
-  answerSR.onstart  = ()=>{ answerSROn=true; cls('answer-mic','listening',true); showStatus('Poslouchám…'); };
-  answerSR.onresult = e=>{
+  answerSR.onstart=()=>{ answerSROn=true; cls('answer-mic','listening',true); showStatus('Poslouchám…'); };
+  answerSR.onresult=e=>{
     let interim='';
     for(let i=e.resultIndex;i<e.results.length;i++){
-      if(e.results[i].isFinal){
-        $('answer-input').value=e.results[i][0].transcript;
-        stopASR(); setTimeout(doSubmit,300); return;
-      }
+      if(e.results[i].isFinal){ $('answer-input').value=e.results[i][0].transcript; stopASR(); setTimeout(doSubmit,300); return; }
       interim+=e.results[i][0].transcript;
     }
     $('answer-input').value=interim;
   };
-  answerSR.onerror = ()=>stopASR();
-  answerSR.onend   = ()=>stopASR();
+  answerSR.onerror=()=>stopASR(); answerSR.onend=()=>stopASR();
   try{answerSR.start();}catch(e){}
 }
 
@@ -906,25 +723,30 @@ function startQuiz() { stopWSR(); showScreen('quiz'); loadQ(); }
 
 function init() {
   loadDB(); updateStats();
-  apiKey = localStorage.getItem(KEY_NAME) || localStorage.getItem('ANTHROPIC_API_KEY') || '';
+  apiKey=localStorage.getItem(KEY_NAME)||localStorage.getItem('ANTHROPIC_API_KEY')||'';
+  if(!apiKey){ showScreen('setup'); } else { showScreen('wake'); buildTopicGrid(); reviewBadge(); setupWSR(); }
 
-  if(!apiKey){ showScreen('setup'); } else { showScreen('wake'); reviewBadge(); setupWSR(); }
-
-  $('save-key-btn').onclick = ()=>{
+  $('save-key-btn').onclick=()=>{
     const v=$('api-key-input').value.trim();
     if(!v.startsWith('sk-')){ alert('Klíč musí začínat „sk-"'); return; }
-    apiKey=v;
-    localStorage.setItem(KEY_NAME,v);
-    localStorage.setItem('ANTHROPIC_API_KEY',v);
-    showScreen('wake'); reviewBadge(); setupWSR();
+    apiKey=v; localStorage.setItem(KEY_NAME,v); localStorage.setItem('ANTHROPIC_API_KEY',v);
+    showScreen('wake'); buildTopicGrid(); reviewBadge(); setupWSR();
   };
 
-  $('start-btn').onclick      = startQuiz;
-  $('wake-mic').onclick       = ()=> wakeSROn ? stopWSR() : startWSR();
-  $('change-key-btn').onclick = ()=>{ stopWSR(); $('api-key-input').value=''; showScreen('setup'); };
-  $('submit-btn').onclick     = doSubmit;
-  $('next-btn').onclick       = loadQ;
-  $('answer-mic').onclick     = ()=> answerSROn ? stopASR() : startASR();
+  $('select-all-btn').onclick=()=>{
+    const chips=document.querySelectorAll('.topic-chip');
+    const allActive=[...chips].every(c=>c.classList.contains('active'));
+    chips.forEach(c=> allActive ? c.classList.remove('active') : c.classList.add('active'));
+    saveTopics();
+    $('select-all-btn').textContent=allActive?'vybrat vše':'zrušit vše';
+  };
+
+  $('start-btn').onclick=startQuiz;
+  $('wake-mic').onclick=()=>wakeSROn?stopWSR():startWSR();
+  $('change-key-btn').onclick=()=>{ stopWSR(); $('api-key-input').value=''; showScreen('setup'); };
+  $('submit-btn').onclick=doSubmit;
+  $('next-btn').onclick=loadQ;
+  $('answer-mic').onclick=()=>answerSROn?stopASR():startASR();
   $('answer-input').addEventListener('keydown',e=>{ if(e.key==='Enter') doSubmit(); });
 }
 
