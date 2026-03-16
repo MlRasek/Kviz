@@ -29,248 +29,179 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0;
     overflow-x: hidden;
   }
 
   body::before {
     content: '';
-    position: fixed;
-    inset: 0;
+    position: fixed; inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.5;
+    pointer-events: none; z-index: 0; opacity: 0.5;
   }
 
-  header { width: 100%; max-width: 680px; padding: 28px 24px 12px; position: relative; z-index: 1; }
+  header { width: 100%; max-width: 680px; padding: 24px 24px 8px; position: relative; z-index: 1; }
 
   .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 13px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    font-family: 'Playfair Display', serif; font-size: 13px;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+    display: flex; align-items: center; gap: 10px;
   }
-
   .logo::before, .logo::after { content: ''; height: 1px; background: var(--line); flex: 1; }
 
   .stats {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    padding: 10px 24px;
-    max-width: 680px;
-    width: 100%;
-    z-index: 1;
-    flex-wrap: wrap;
+    display: flex; gap: 10px; justify-content: center;
+    padding: 8px 24px; max-width: 680px; width: 100%; z-index: 1; flex-wrap: wrap;
   }
 
   .stat-pill {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    background: var(--cream);
-    border: 1px solid var(--line);
-    padding: 4px 12px;
-    border-radius: 20px;
+    font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.08em;
+    color: var(--muted); background: var(--cream); border: 1px solid var(--line);
+    padding: 4px 12px; border-radius: 20px;
   }
-
   .stat-pill span { color: var(--ink); font-weight: 500; }
 
   .card {
-    width: 100%;
-    max-width: 680px;
-    padding: 0 16px 100px;
-    z-index: 1;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+    width: 100%; max-width: 680px; padding: 0 16px 100px;
+    z-index: 1; flex: 1; display: flex; flex-direction: column; gap: 14px;
   }
 
   #setup-screen { display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 40px 0; text-align: center; }
   #setup-screen h2 { font-family: 'Playfair Display', serif; font-size: 32px; }
   #setup-screen h2 em { font-style: italic; color: var(--accent); }
   #setup-screen p { font-size: 14px; color: var(--muted); max-width: 340px; line-height: 1.7; }
-
   .key-input-row { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 420px; }
-
   .key-input {
     border: 2px solid var(--line); border-radius: 6px; padding: 14px 16px;
-    font-family: 'DM Mono', monospace; font-size: 13px;
-    background: white; color: var(--ink); outline: none; width: 100%; -webkit-appearance: none;
+    font-family: 'DM Mono', monospace; font-size: 13px; background: white;
+    color: var(--ink); outline: none; width: 100%; -webkit-appearance: none;
   }
-
   .key-input:focus { border-color: var(--ink); }
-
   .key-btn {
-    padding: 15px; background: var(--ink); color: var(--paper);
-    border: none; border-radius: 6px; font-family: 'DM Sans', sans-serif;
-    font-size: 15px; font-weight: 500; cursor: pointer; -webkit-appearance: none;
+    padding: 15px; background: var(--ink); color: var(--paper); border: none;
+    border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 15px;
+    font-weight: 500; cursor: pointer; -webkit-appearance: none;
   }
-
   .key-btn:active { background: var(--accent); }
 
-  #wake-screen { display: none; flex-direction: column; align-items: center; gap: 28px; padding: 32px 0; text-align: center; }
-
-  .title-block h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 10vw, 62px); line-height: 1; color: var(--ink); }
+  #wake-screen { display: none; flex-direction: column; align-items: center; gap: 24px; padding: 28px 0; text-align: center; }
+  .title-block h1 { font-family: 'Playfair Display', serif; font-size: clamp(38px, 9vw, 58px); line-height: 1; color: var(--ink); }
   .title-block h1 em { font-style: italic; color: var(--accent); }
-  .title-block p { font-size: 14px; color: var(--muted); margin-top: 12px; font-weight: 300; line-height: 1.6; }
+  .title-block p { font-size: 14px; color: var(--muted); margin-top: 10px; font-weight: 300; line-height: 1.6; }
 
   .review-badge {
-    background: linear-gradient(135deg, #c9a84c, #e8b84b);
-    color: white; padding: 10px 22px; border-radius: 6px;
-    font-size: 13px; font-weight: 500; display: none; text-align: center;
-    width: 100%; max-width: 360px;
+    background: linear-gradient(135deg, #c9a84c, #e8b84b); color: white;
+    padding: 10px 22px; border-radius: 6px; font-size: 13px; font-weight: 500;
+    display: none; text-align: center; width: 100%; max-width: 360px;
   }
-
   .review-badge.show { display: block; }
 
+  .review-mode-btn {
+    background: rgba(192,57,43,0.08); color: var(--accent);
+    border: 1.5px solid rgba(192,57,43,0.3); border-radius: 6px;
+    padding: 11px 22px; font-family: 'DM Sans', sans-serif; font-size: 14px;
+    font-weight: 500; cursor: pointer; display: none; width: 100%; max-width: 360px;
+    -webkit-appearance: none;
+  }
+  .review-mode-btn.show { display: block; }
+  .review-mode-btn:active { background: rgba(192,57,43,0.15); }
+
   .topic-section { width: 100%; max-width: 500px; }
-
   .topic-section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
   }
-
   .topic-section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
-
-  .topic-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-  }
-
+  .topic-grid { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
   .topic-chip {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    padding: 7px 14px;
-    border-radius: 20px;
-    border: 1.5px solid var(--line);
-    background: white;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.18s;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; padding: 7px 14px;
+    border-radius: 20px; border: 1.5px solid var(--line); background: white;
+    color: var(--muted); cursor: pointer; transition: all 0.15s;
+    user-select: none; -webkit-tap-highlight-color: transparent;
   }
-
-  .topic-chip.active {
-    background: var(--ink);
-    color: var(--paper);
-    border-color: var(--ink);
-  }
-
+  .topic-chip.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
   .topic-chip:active { transform: scale(0.95); }
-
   .select-all-btn {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    background: none;
-    border: none;
-    cursor: pointer;
-    letter-spacing: 0.05em;
-    text-decoration: underline;
-    padding: 4px 0;
+    font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted);
+    background: none; border: none; cursor: pointer; letter-spacing: 0.05em;
+    text-decoration: underline; padding: 4px 0;
   }
 
   .mic-ring {
-    width: 72px; height: 72px; border-radius: 50%;
-    background: var(--cream); border: 2px solid var(--line);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 28px; cursor: pointer; transition: all 0.25s;
+    width: 68px; height: 68px; border-radius: 50%; background: var(--cream);
+    border: 2px solid var(--line); display: flex; align-items: center;
+    justify-content: center; font-size: 26px; cursor: pointer; transition: all 0.25s;
   }
-
   .mic-ring.listening { border-color: var(--accent); animation: pulse-ring 1.4s ease-out infinite; }
 
   @keyframes pulse-ring {
     0%   { box-shadow: 0 0 0 0 rgba(192,57,43,0.35); }
-    70%  { box-shadow: 0 0 0 20px rgba(192,57,43,0); }
+    70%  { box-shadow: 0 0 0 18px rgba(192,57,43,0); }
     100% { box-shadow: 0 0 0 0 rgba(192,57,43,0); }
   }
 
-  .wake-hint p { font-size: 12px; color: var(--muted); font-family: 'DM Mono', monospace; margin-top: 8px; letter-spacing: 0.05em; }
-
+  .wake-hint p { font-size: 12px; color: var(--muted); font-family: 'DM Mono', monospace; margin-top: 6px; letter-spacing: 0.05em; }
   .start-btn {
-    background: var(--ink); color: var(--paper); border: none;
-    padding: 15px 40px; font-family: 'DM Sans', sans-serif;
-    font-size: 16px; font-weight: 500; cursor: pointer; border-radius: 6px; -webkit-appearance: none;
+    background: var(--ink); color: var(--paper); border: none; padding: 15px 40px;
+    font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500;
+    cursor: pointer; border-radius: 6px; -webkit-appearance: none;
   }
-
   .start-btn:active { background: var(--accent); }
-
   .change-key-btn {
     font-size: 12px; color: var(--muted); background: none; border: none;
-    cursor: pointer; font-family: 'DM Mono', monospace;
-    letter-spacing: 0.05em; text-decoration: underline; padding: 0;
+    cursor: pointer; font-family: 'DM Mono', monospace; letter-spacing: 0.05em;
+    text-decoration: underline; padding: 0;
   }
 
   #quiz-screen { display: none; flex-direction: column; gap: 14px; }
   #quiz-screen.active { display: flex; }
 
   .question-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 6px; }
-
   .q-number { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); letter-spacing: 0.1em; }
-
   .q-category {
-    font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em;
-    color: var(--gold); font-weight: 500;
-    background: rgba(201,168,76,0.1); padding: 3px 10px;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold);
+    font-weight: 500; background: rgba(201,168,76,0.1); padding: 3px 10px;
     border-radius: 12px; border: 1px solid rgba(201,168,76,0.3);
-    max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   }
-
   .q-category.review { color: var(--accent); background: rgba(192,57,43,0.08); border-color: rgba(192,57,43,0.25); }
 
   .question-box {
     background: white; border: 1px solid var(--line); border-radius: 8px;
-    padding: 26px 22px; box-shadow: var(--shadow);
-    position: relative; overflow: hidden; min-height: 80px;
+    padding: 24px 22px; box-shadow: var(--shadow); position: relative; overflow: hidden; min-height: 78px;
   }
-
   .question-box::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
     background: linear-gradient(90deg, var(--accent), var(--gold));
   }
+  .question-text { font-family: 'Playfair Display', serif; font-size: clamp(16px, 4vw, 21px); line-height: 1.55; color: var(--ink); }
 
-  .question-text { font-family: 'Playfair Display', serif; font-size: clamp(16px, 4.2vw, 21px); line-height: 1.55; color: var(--ink); }
+  .prefetch-bar {
+    height: 2px; background: var(--line); border-radius: 1px; overflow: hidden; opacity: 0; transition: opacity 0.3s;
+  }
+  .prefetch-bar.active { opacity: 1; }
+  .prefetch-bar::after {
+    content: ''; display: block; height: 100%; width: 40%;
+    background: var(--gold); animation: slide-bar 1.2s ease-in-out infinite;
+  }
+  @keyframes slide-bar { 0%{transform:translateX(-100%)} 100%{transform:translateX(350%)} }
 
   .loading { display: none; flex-direction: column; align-items: center; gap: 12px; padding: 28px; text-align: center; }
   .loading.active { display: flex; }
-
   .spinner {
-    width: 32px; height: 32px;
-    border: 2px solid var(--line); border-top-color: var(--accent);
-    border-radius: 50%; animation: spin 0.75s linear infinite;
+    width: 30px; height: 30px; border: 2px solid var(--line); border-top-color: var(--accent);
+    border-radius: 50%; animation: spin 0.7s linear infinite;
   }
-
   @keyframes spin { to { transform: rotate(360deg); } }
-
   .loading p { font-size: 13px; color: var(--muted); font-family: 'DM Mono', monospace; }
 
   .answer-area { display: flex; flex-direction: column; gap: 10px; }
   .answer-row { display: flex; gap: 10px; align-items: stretch; }
-
   .answer-input {
-    flex: 1; border: 2px solid var(--line); border-radius: 6px;
-    padding: 14px 16px; font-family: 'DM Sans', sans-serif; font-size: 16px;
-    background: white; color: var(--ink); outline: none; -webkit-appearance: none;
+    flex: 1; border: 2px solid var(--line); border-radius: 6px; padding: 14px 16px;
+    font-family: 'DM Sans', sans-serif; font-size: 16px; background: white;
+    color: var(--ink); outline: none; -webkit-appearance: none;
   }
-
   .answer-input:focus { border-color: var(--ink); }
   .answer-input::placeholder { color: #b8b0a0; }
 
@@ -279,22 +210,18 @@
     background: white; font-size: 22px; cursor: pointer;
     display: flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
-
   .mic-btn.listening { border-color: var(--accent); background: rgba(192,57,43,0.06); animation: pulse-ring 1.4s ease-out infinite; }
 
   .submit-btn {
-    width: 100%; padding: 16px; background: var(--ink); color: var(--paper);
-    border: none; border-radius: 6px; font-family: 'DM Sans', sans-serif;
-    font-size: 16px; font-weight: 500; cursor: pointer; -webkit-appearance: none;
+    width: 100%; padding: 16px; background: var(--ink); color: var(--paper); border: none;
+    border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 16px;
+    font-weight: 500; cursor: pointer; -webkit-appearance: none;
   }
-
   .submit-btn:active { background: var(--accent); }
   .submit-btn:disabled { opacity: 0.45; cursor: not-allowed; }
 
-  .result-card { border-radius: 8px; padding: 18px 20px; border: 1px solid transparent; display: none; animation: slide-up 0.3s ease; }
-
-  @keyframes slide-up { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
-
+  .result-card { border-radius: 8px; padding: 18px 20px; border: 1px solid transparent; display: none; animation: slide-up 0.25s ease; }
+  @keyframes slide-up { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
   .result-card.correct { background: rgba(45,106,79,0.07); border-color: rgba(45,106,79,0.25); display: block; }
   .result-card.wrong   { background: rgba(192,57,43,0.05); border-color: rgba(192,57,43,0.2);  display: block; }
 
@@ -305,34 +232,37 @@
   .result-card.wrong   .result-label { color: var(--accent); }
 
   .correct-answer { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--ink); margin-bottom: 12px; }
-
   .fun-fact { font-size: 14px; color: var(--muted); line-height: 1.65; padding-top: 12px; border-top: 1px solid var(--line); }
 
   .mnemonic-box { margin-top: 12px; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); border-radius: 6px; padding: 14px 16px; }
   .mnemonic-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); font-weight: 600; margin-bottom: 6px; }
   .mnemonic-text { font-size: 14px; line-height: 1.65; color: var(--ink); font-style: italic; }
 
+  .better-mnemonic-btn {
+    margin-top: 8px; padding: 8px 14px; background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.4); border-radius: 4px; color: #8a6a1a;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; cursor: pointer;
+    display: none; -webkit-appearance: none; width: 100%;
+  }
+  .better-mnemonic-btn.show { display: block; }
+  .better-mnemonic-btn:active { background: rgba(201,168,76,0.25); }
+
   .next-btn {
     width: 100%; padding: 15px; background: white; color: var(--ink);
     border: 2px solid var(--ink); border-radius: 6px; font-family: 'DM Sans', sans-serif;
     font-size: 15px; font-weight: 500; cursor: pointer; display: none; -webkit-appearance: none;
   }
-
   .next-btn.show { display: block; }
   .next-btn:active { background: var(--ink); color: var(--paper); }
 
   .status-bar {
-    position: fixed; bottom: 0; left: 0; right: 0;
-    background: var(--ink); color: var(--paper);
+    position: fixed; bottom: 0; left: 0; right: 0; background: var(--ink); color: var(--paper);
     padding: 12px 20px; display: flex; align-items: center; justify-content: center; gap: 10px;
     font-family: 'DM Mono', monospace; font-size: 12px;
     transform: translateY(100%); transition: transform 0.3s; z-index: 100;
   }
-
   .status-bar.show { transform: translateY(0); }
-
   .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: blink 1s ease-in-out infinite; flex-shrink: 0; }
-
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
 
   .error-box {
@@ -340,7 +270,6 @@
     border-radius: 6px; padding: 14px 16px; font-size: 14px; color: var(--accent);
     display: none; line-height: 1.6; white-space: pre-line;
   }
-
   .error-box.show { display: block; }
 </style>
 </head>
@@ -364,7 +293,7 @@
     <div class="key-input-row">
       <input type="password" class="key-input" id="api-key-input"
              placeholder="sk-ant-api03-…"
-             autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" />
+             autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false"/>
       <button class="key-btn" id="save-key-btn">Uložit a spustit →</button>
     </div>
     <p style="font-size:12px;color:#aaa;">Klíč najdeš na console.anthropic.com → API Keys</p>
@@ -372,6 +301,7 @@
 
   <div id="wake-screen">
     <div id="review-badge" class="review-badge"></div>
+    <button class="review-mode-btn" id="review-mode-btn">🔁 Procvičit špatné odpovědi</button>
     <div class="title-block">
       <h1>Kvíz<em>ový</em><br>trenér</h1>
       <p>Trénuj každý den.<br>Špatné odpovědi se opakují, dokud si je nezapamatuješ.</p>
@@ -399,6 +329,7 @@
     <div class="question-box">
       <div class="question-text" id="question-text"></div>
     </div>
+    <div class="prefetch-bar" id="prefetch-bar"></div>
     <div class="loading" id="loading">
       <div class="spinner"></div>
       <p id="loading-msg">Generuji otázku…</p>
@@ -408,7 +339,7 @@
       <div class="answer-row">
         <input type="text" class="answer-input" id="answer-input"
                placeholder="Tvoje odpověď…"
-               autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" />
+               autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false"/>
         <button class="mic-btn" id="answer-mic">🎙️</button>
       </div>
       <button class="submit-btn" id="submit-btn">Odpovědět</button>
@@ -423,6 +354,7 @@
       <div class="mnemonic-box" id="mnemonic-box" style="display:none">
         <div class="mnemonic-label">🧠 Mnemotechnická pomůcka</div>
         <div class="mnemonic-text" id="mnemonic-text"></div>
+        <button class="better-mnemonic-btn" id="better-mnemonic-btn">💡 Lepší pomůcka</button>
       </div>
     </div>
     <button class="next-btn" id="next-btn">Další otázka →</button>
@@ -438,56 +370,62 @@
 <script>
 'use strict';
 
-const STORE    = 'kviz_v4';
+const STORE    = 'kviz_v5';
 const KEY_NAME = 'karel_key';
 const API_URL  = '/.netlify/functions/claude';
 const MODEL    = 'claude-sonnet-4-20250514';
 
 const ALL_TOPICS = [
-  { id:'dejiny',      label:'🏛️ Dějiny světa' },
-  { id:'cesko',       label:'🇨🇿 České dějiny' },
-  { id:'zemepisS',    label:'🌍 Zeměpis světa' },
-  { id:'zemepisE',    label:'🗺️ Zeměpis Evropy' },
-  { id:'vesmir',      label:'🔭 Vesmír' },
-  { id:'priroda',     label:'🌿 Příroda & biologie' },
-  { id:'kultura',     label:'🎭 Světová kultura' },
-  { id:'umeni',       label:'🎨 Umění & architektura' },
-  { id:'hudba',       label:'🎵 Hudba' },
-  { id:'film',        label:'🎬 Film & divadlo' },
-  { id:'literatura',  label:'📚 Literatura' },
-  { id:'filozofie',   label:'💭 Filozofie & náboženství' },
-  { id:'sport',       label:'⚽ Sport' },
-  { id:'olympiada',   label:'🏅 Olympiáda & rekordy' },
-  { id:'gastronomie', label:'🍷 Gastronomie světa' },
-  { id:'politika',    label:'🌐 Státy & politika' },
-  { id:'mytologie',   label:'⚡ Mytologie' },
-  { id:'vynalezy',    label:'💡 Vynálezy & objevy' },
+  { id:'dejiny',     label:'🏛️ Dějiny světa' },
+  { id:'cesko',      label:'🇨🇿 České dějiny' },
+  { id:'zemepisS',   label:'🌍 Zeměpis světa' },
+  { id:'zemepisE',   label:'🗺️ Zeměpis Evropy' },
+  { id:'vesmir',     label:'🔭 Vesmír' },
+  { id:'priroda',    label:'🌿 Příroda & biologie' },
+  { id:'kultura',    label:'🎭 Světová kultura' },
+  { id:'umeni',      label:'🎨 Umění & architektura' },
+  { id:'hudba',      label:'🎵 Hudba' },
+  { id:'film',       label:'🎬 Film & divadlo' },
+  { id:'literatura', label:'📚 Literatura' },
+  { id:'filozofie',  label:'💭 Filozofie & náboženství' },
+  { id:'sport',      label:'⚽ Sport' },
+  { id:'olympiada',  label:'🏅 Olympiáda & rekordy' },
+  { id:'politika',   label:'🌐 Státy & politika' },
+  { id:'mytologie',  label:'⚡ Mytologie' },
+  { id:'vynalezy',   label:'💡 Vynálezy & objevy' },
 ];
 
 const TOPIC_PROMPTS = {
-  dejiny:     'světové dějiny, války, říše, historické události a osobnosti',
-  cesko:      'české a československé dějiny, osobnosti, události',
-  zemepisS:   'světový zeměpis — hlavní města, řeky, hory, kontinenty, moře',
-  zemepisE:   'evropský zeměpis — státy, hlavní města, řeky, pohoří',
-  vesmir:     'astronomie, planety, hvězdy, vesmírné mise, fyzika vesmíru',
-  priroda:    'biologie, zvířata, rostliny, ekosystémy, přírodní jevy',
-  kultura:    'světová kultura, tradice, svátky, civilizace',
-  umeni:      'výtvarné umění, malíři, sochaři, architektura, slavné stavby',
-  hudba:      'hudba — skladatelé, kapely, žánry, hudební nástroje, slavné skladby',
-  film:       'film, divadlo, herci, režiséři, slavná díla',
-  literatura: 'literatura — spisovatelé, romány, básníci, literární díla',
-  filozofie:  'filozofie, filozofové, světová náboženství a jejich historie',
-  sport:      'sport — fotbal, tenis, atletika, hokej, plavání a jiné sporty',
-  olympiada:  'olympijské hry, olympijští vítězové, světové rekordy',
-  gastronomie:'světová kuchyně, jídla, nápoje, kulinářské tradice',
-  politika:   'státy světa, hlavy států, politické systémy, mezinárodní organizace',
-  mytologie:  'řecká, římská, severská a jiná světová mytologie',
-  vynalezy:   'vynálezy, vědci, objevy, průkopníci vědy a techniky',
+  dejiny:    'světové dějiny, války, říše, historické události a osobnosti',
+  cesko:     'české a československé dějiny, osobnosti, události',
+  zemepisS:  'světový zeměpis — hlavní města, řeky, hory, kontinenty, moře',
+  zemepisE:  'evropský zeměpis — státy, hlavní města, řeky, pohoří',
+  vesmir:    'astronomie, planety, hvězdy, vesmírné mise, fyzika vesmíru',
+  priroda:   'biologie, zvířata, rostliny, ekosystémy, přírodní jevy',
+  kultura:   'světová kultura, tradice, svátky, civilizace',
+  umeni:     'výtvarné umění, malíři, sochaři, architektura, slavné stavby',
+  hudba:     'hudba — skladatelé, kapely, žánry, hudební nástroje, slavné skladby',
+  film:      'film, divadlo, herci, režiséři, slavná díla',
+  literatura:'literatura — spisovatelé, romány, básníci, literární díla',
+  filozofie: 'filozofie, filozofové, světová náboženství a jejich historie',
+  sport:     'sport — fotbal, tenis, atletika, hokej, plavání a jiné sporty',
+  olympiada: 'olympijské hry, vítězové, světové rekordy',
+  politika:  'státy světa, hlavy států, politické systémy, mezinárodní organizace',
+  mytologie: 'řecká, římská, severská a jiná světová mytologie',
+  vynalezy:  'vynálezy, vědci, objevy, průkopníci vědy a techniky',
 };
 
 let apiKey = '';
-let db = { todayDate:'', todayCount:0, todayCorrect:0, wrongAnswers:[], askedQuestions:[], activeTopics:null };
-let currentQ = null, qIndex = 0, submitted = false;
+let db = {
+  todayDate:'', todayCount:0, todayCorrect:0,
+  wrongAnswers:[], askedQuestions:[], activeTopics:null
+};
+let currentQ   = null;
+let qIndex     = 0;
+let submitted  = false;
+let reviewMode = false;
+let prefetched = null;
+let prefetching = false;
 let wakeSR = null, wakeSROn = false;
 let answerSR = null, answerSROn = false;
 
@@ -500,7 +438,6 @@ function showScreen(n) {
   $('wake-screen').style.display  = n==='wake'  ? 'flex' : 'none';
   $('quiz-screen').className      = n==='quiz'  ? 'active' : '';
 }
-
 function showStatus(m) { $('status-text').textContent=m; cls('status-bar','show',true); }
 function hideStatus()  { cls('status-bar','show',false); }
 function showErr(m)    { $('error-box').textContent=m; cls('error-box','show',true); }
@@ -538,18 +475,20 @@ function saveTopics() {
   const active = [...document.querySelectorAll('.topic-chip.active')].map(c=>c.dataset.id);
   db.activeTopics = active.length > 0 ? active : ALL_TOPICS.map(t=>t.id);
   saveDB();
+  prefetched = null;
 }
 
-function getRandomTopic() {
-  const active = db.activeTopics && db.activeTopics.length > 0 ? db.activeTopics : ALL_TOPICS.map(t=>t.id);
-  return active[Math.floor(Math.random()*active.length)];
+function getRandomTopicPrompt() {
+  const active = db.activeTopics && db.activeTopics.length>0 ? db.activeTopics : ALL_TOPICS.map(t=>t.id);
+  const id = active[Math.floor(Math.random()*active.length)];
+  return TOPIC_PROMPTS[id] || id;
 }
 
 async function callClaude(system, user, maxT) {
   const r = await fetch(API_URL, {
     method: 'POST',
     headers: { 'Content-Type':'application/json', 'x-api-key': apiKey },
-    body: JSON.stringify({ model:MODEL, max_tokens:maxT||700, system, messages:[{role:'user',content:user}] })
+    body: JSON.stringify({ model:MODEL, max_tokens:maxT||800, system, messages:[{role:'user',content:user}] })
   });
   if(!r.ok){
     let msg='HTTP '+r.status;
@@ -561,56 +500,92 @@ async function callClaude(system, user, maxT) {
   return t.replace(/^```(?:json)?\s*/i,'').replace(/\s*```\s*$/,'').trim();
 }
 
-async function genQuestion(rev) {
+async function genQuestion(forceReview) {
   const sys = 'Jsi generátor kvízových otázek. Odpovídej VÝHRADNĚ validním JSON objektem bez markdown.\nFormát: {"question":"česky","answer":"max 5 slov","category":"kategorie","fun_fact":"2-3 věty česky","aliases":["alt odpovedi"]}';
   let msg;
-  if(rev){
-    msg = `Otázka "${rev.question}" (správně: "${rev.correctAnswer}") byla zodpovězena špatně. Vytvoř NOVOU příbuznou otázku ze stejného tématu. Kategorie: ${rev.category}.`;
+  if(forceReview){
+    const w = [...db.wrongAnswers].sort((a,b)=>(b.askedCount||0)-(a.askedCount||0));
+    const pick = w[Math.floor(Math.random()*Math.min(3,w.length))];
+    msg = `Otázka "${pick.question}" (správně: "${pick.correctAnswer}") byla opakovaně zodpovězena špatně. Vytvoř NOVOU příbuznou otázku ze stejného tématu jinak formulovanou. Kategorie: ${pick.category}.`;
   } else {
-    const topicId = getRandomTopic();
-    const topicPrompt = TOPIC_PROMPTS[topicId] || topicId;
-    const avoid = db.askedQuestions.slice(-40).join(' | ');
+    const topicPrompt = getRandomTopicPrompt();
+    const avoid = db.askedQuestions.slice(-50).join(' | ');
     msg = `Vytvoř jednu faktickou kvízovou otázku ze všeobecných znalostí.
 Téma: ${topicPrompt}.
 Odpověď musí být stručná (1–5 slov). Střední obtížnost.
-DŮLEŽITÉ: Vyhni se otázkám z počítačů, IT, programování a technologií.
-${avoid ? `Tato témata již byla použita — nevytvárej podobné otázky: ${avoid}` : ''}`;
+VYHNI SE: počítačům, IT, programování, technologiím, kuchyni, receptům, jídlu.
+${avoid ? `Tato témata již byla použita — nevytvárej podobné: ${avoid}` : ''}`;
   }
-  return JSON.parse(await callClaude(sys,msg,600));
+  return JSON.parse(await callClaude(sys, msg, 600));
 }
 
 async function evalAnswer(q, ans) {
   const sys = 'Jsi hodnotitel kvízových odpovědí. Odpovídej VÝHRADNĚ validním JSON objektem bez markdown.\nFormát: {"correct":true/false,"mnemonic":"pomůcka nebo null","fun_fact":"2-3 věty"}';
   const al = (q.aliases||[]).join(', ');
-  const msg = `Otázka: "${q.question}"\nSprávná odpověď: "${q.answer}"${al?` (nebo: ${al})`:''}\nUživatelova odpověď: "${ans}"\nUrči správnost (toleruj překlepy, synonyma). Pokud špatně, vytvoř vtipnou/vizuální mnemotechnickou pomůcku česky.`;
-  return JSON.parse(await callClaude(sys,msg,400));
+  const msg = `Otázka: "${q.question}"\nSprávná odpověď: "${q.answer}"${al?` (nebo: ${al})`:''}\nUživatelova odpověď: "${ans}"\nUrči správnost (toleruj překlepy, synonyma).\nPokud špatně: vytvoř VÝRAZNOU, VTIPNOU nebo VIZUÁLNÍ mnemotechnickou pomůcku česky — použij příběh, rým, absurdní obraz nebo zkratku.`;
+  return JSON.parse(await callClaude(sys, msg, 400));
 }
 
-function pickReview() {
+async function genBetterMnemonic(q) {
+  const sys = 'Jsi expert na mnemotechniky. Odpovídej VÝHRADNĚ validním JSON objektem bez markdown.\nFormát: {"mnemonic":"nová pomůcka"}';
+  const msg = `Vymysli JINOU, KREATIVNĚJŠÍ mnemotechnickou pomůcku pro zapamatování:
+Otázka: "${q.question}"
+Odpověď: "${q.answer}"
+Použij jiný přístup — například rým, příběh, absurdní vizualizaci nebo akronym.`;
+  const raw = await callClaude(sys, msg, 300);
+  return JSON.parse(raw).mnemonic;
+}
+
+function startPrefetch() {
+  if(prefetching || prefetched) return;
+  prefetching = true;
+  cls('prefetch-bar','active',true);
+  genQuestion(false)
+    .then(q => { prefetched=q; prefetching=false; cls('prefetch-bar','active',false); })
+    .catch(()=> { prefetching=false; cls('prefetch-bar','active',false); });
+}
+
+function pickReviewItem() {
   if(!db.wrongAnswers.length) return null;
+  if(reviewMode) {
+    const sorted = [...db.wrongAnswers].sort((a,b)=>(b.askedCount||0)-(a.askedCount||0));
+    return sorted[Math.floor(Math.random()*Math.min(5,sorted.length))];
+  }
   if(qIndex % 3 !== 2) return null;
   return [...db.wrongAnswers].sort((a,b)=>(a.askedCount||0)-(b.askedCount||0))[0];
 }
 
 async function loadQ() {
-  submitted = false; qIndex++;
+  submitted=false; qIndex++;
   $('result-card').className='result-card'; $('next-btn').className='next-btn';
   show('answer-area','none'); $('answer-input').value='';
   $('question-text').textContent=''; $('submit-btn').disabled=true;
-  hideErr(); cls('loading','active',true);
-  $('loading-msg').textContent='Generuji otázku…';
-  $('q-number').textContent='Otázka '+qIndex;
+  hideErr();
+  $('q-number').textContent = reviewMode ? '🔁 Opakování' : 'Otázka '+qIndex;
 
-  const rev = pickReview();
+  const rev = pickReviewItem();
+
+  if(prefetched && !rev && !reviewMode) {
+    const q = prefetched; prefetched=null; currentQ=q;
+    $('question-text').textContent=q.question;
+    const ce=$('q-category'); ce.textContent=q.category||'—'; ce.className='q-category';
+    show('answer-area','flex'); $('submit-btn').disabled=false; $('answer-input').focus();
+    setTimeout(startPrefetch, 100);
+    return;
+  }
+
+  cls('loading','active',true);
+  $('loading-msg').textContent = rev ? 'Načítám opakování…' : 'Generuji otázku…';
+
   try {
-    const q = await genQuestion(rev);
-    currentQ = q;
+    const q = await genQuestion(rev ? true : false);
+    currentQ=q;
     cls('loading','active',false);
-    $('question-text').textContent = q.question;
-    const ce = $('q-category');
-    ce.textContent = q.category||'—';
+    $('question-text').textContent=q.question;
+    const ce=$('q-category'); ce.textContent=q.category||'—';
     ce.className = rev ? 'q-category review' : 'q-category';
     show('answer-area','flex'); $('submit-btn').disabled=false; $('answer-input').focus();
+    setTimeout(startPrefetch, 200);
   } catch(e) {
     cls('loading','active',false);
     showErr('Nepodařilo se načíst otázku.\n'+e.message);
@@ -620,7 +595,7 @@ async function loadQ() {
 
 async function doSubmit() {
   if(submitted) return;
-  const ans = $('answer-input').value.trim();
+  const ans=$('answer-input').value.trim();
   if(!ans) return;
   submitted=true; $('submit-btn').disabled=true;
   stopASR(); showStatus('Vyhodnocuji…');
@@ -628,16 +603,16 @@ async function doSubmit() {
   show('answer-area','none');
 
   let result;
-  try { result = await evalAnswer(currentQ, ans); }
-  catch(e) { result = { correct:localCheck(currentQ,ans), mnemonic:null, fun_fact:currentQ.fun_fact||'' }; }
+  try { result=await evalAnswer(currentQ,ans); }
+  catch(e) { result={correct:localCheck(currentQ,ans),mnemonic:null,fun_fact:currentQ.fun_fact||''}; }
 
   cls('loading','active',false); hideStatus();
   renderResult(result); record(result.correct);
 }
 
 function localCheck(q,ans) {
-  const n = s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
-  const a=n(ans), ca=n(q.answer);
+  const n=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+  const a=n(ans),ca=n(q.answer);
   if(a===ca||a.includes(ca)||ca.includes(a)) return true;
   return (q.aliases||[]).some(x=>n(x)===a);
 }
@@ -652,11 +627,27 @@ function renderResult(r) {
     $('result-icon').textContent='❌'; $('result-label').textContent='Špatně';
     show('correct-answer','block');
     $('correct-answer').textContent='Správná odpověď: '+currentQ.answer;
-    if(r.mnemonic){ show('mnemonic-box','block'); $('mnemonic-text').textContent=r.mnemonic; }
-    else show('mnemonic-box','none');
+    if(r.mnemonic){
+      show('mnemonic-box','block');
+      $('mnemonic-text').textContent=r.mnemonic;
+      $('better-mnemonic-btn').className='better-mnemonic-btn show';
+      $('better-mnemonic-btn').textContent='💡 Lepší pomůcka';
+      $('better-mnemonic-btn').disabled=false;
+    } else { show('mnemonic-box','none'); }
   }
   $('fun-fact').textContent=r.fun_fact||currentQ.fun_fact||'';
   $('next-btn').textContent='Další otázka →'; $('next-btn').className='next-btn show';
+}
+
+async function requestBetterMnemonic() {
+  $('better-mnemonic-btn').textContent='⏳ Generuji…';
+  $('better-mnemonic-btn').disabled=true;
+  try {
+    const m=await genBetterMnemonic(currentQ);
+    $('mnemonic-text').textContent=m;
+    $('better-mnemonic-btn').textContent='💡 Ještě lepší?';
+    $('better-mnemonic-btn').disabled=false;
+  } catch(e) { $('better-mnemonic-btn').textContent='Nepodařilo se'; }
 }
 
 function record(correct) {
@@ -667,7 +658,7 @@ function record(correct) {
       db.askedQuestions.push(currentQ.question);
       if(db.askedQuestions.length>300) db.askedQuestions.shift();
     }
-    db.wrongAnswers = db.wrongAnswers.filter(w=>w.question!==currentQ.question);
+    db.wrongAnswers=db.wrongAnswers.filter(w=>w.question!==currentQ.question);
   } else {
     const today=new Date().toISOString().slice(0,10);
     const ex=db.wrongAnswers.find(w=>w.question===currentQ.question);
@@ -675,13 +666,17 @@ function record(correct) {
     else db.wrongAnswers.push({question:currentQ.question,correctAnswer:currentQ.answer,category:currentQ.category,askedCount:1,lastAsked:today});
   }
   saveDB(); updateStats();
+  if(reviewMode && db.wrongAnswers.length===0){ reviewMode=false; }
 }
 
 function setupWSR() {
   const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
   if(!SR) return;
   wakeSR=new SR(); wakeSR.lang='cs-CZ'; wakeSR.continuous=true; wakeSR.interimResults=false;
-  wakeSR.onresult=e=>{ const t=e.results[e.results.length-1][0].transcript.trim().toLowerCase(); if(t.includes('kvíz')||t.includes('kviz')){ stopWSR(); startQuiz(); } };
+  wakeSR.onresult=e=>{
+    const t=e.results[e.results.length-1][0].transcript.trim().toLowerCase();
+    if(t.includes('kvíz')||t.includes('kviz')){ stopWSR(); startQuiz(false); }
+  };
   wakeSR.onerror=()=>{ wakeSROn=false; cls('wake-mic','listening',false); };
   wakeSR.onend=()=>{ if(wakeSROn) try{wakeSR.start();}catch(e){} };
 }
@@ -719,12 +714,16 @@ function stopASR() {
   answerSROn=false; cls('answer-mic','listening',false); hideStatus();
 }
 
-function startQuiz() { stopWSR(); showScreen('quiz'); loadQ(); }
+function startQuiz(isReview) {
+  reviewMode=!!isReview; prefetched=null;
+  stopWSR(); showScreen('quiz'); loadQ();
+}
 
 function init() {
   loadDB(); updateStats();
   apiKey=localStorage.getItem(KEY_NAME)||localStorage.getItem('ANTHROPIC_API_KEY')||'';
-  if(!apiKey){ showScreen('setup'); } else { showScreen('wake'); buildTopicGrid(); reviewBadge(); setupWSR(); }
+  if(!apiKey){ showScreen('setup'); }
+  else { showScreen('wake'); buildTopicGrid(); reviewBadge(); setupWSR(); }
 
   $('save-key-btn').onclick=()=>{
     const v=$('api-key-input').value.trim();
@@ -736,24 +735,30 @@ function init() {
   $('select-all-btn').onclick=()=>{
     const chips=document.querySelectorAll('.topic-chip');
     const allActive=[...chips].every(c=>c.classList.contains('active'));
-    chips.forEach(c=> allActive ? c.classList.remove('active') : c.classList.add('active'));
+    chips.forEach(c=>allActive?c.classList.remove('active'):c.classList.add('active'));
     saveTopics();
     $('select-all-btn').textContent=allActive?'vybrat vše':'zrušit vše';
   };
 
-  $('start-btn').onclick=startQuiz;
-  $('wake-mic').onclick=()=>wakeSROn?stopWSR():startWSR();
-  $('change-key-btn').onclick=()=>{ stopWSR(); $('api-key-input').value=''; showScreen('setup'); };
-  $('submit-btn').onclick=doSubmit;
-  $('next-btn').onclick=loadQ;
-  $('answer-mic').onclick=()=>answerSROn?stopASR():startASR();
+  $('start-btn').onclick       = ()=>startQuiz(false);
+  $('review-mode-btn').onclick = ()=>startQuiz(true);
+  $('wake-mic').onclick        = ()=>wakeSROn?stopWSR():startWSR();
+  $('change-key-btn').onclick  = ()=>{ stopWSR(); $('api-key-input').value=''; showScreen('setup'); };
+  $('submit-btn').onclick      = doSubmit;
+  $('next-btn').onclick        = loadQ;
+  $('answer-mic').onclick      = ()=>answerSROn?stopASR():startASR();
+  $('better-mnemonic-btn').onclick = requestBetterMnemonic;
   $('answer-input').addEventListener('keydown',e=>{ if(e.key==='Enter') doSubmit(); });
 }
 
 function reviewBadge() {
-  const n=db.wrongAnswers.length, b=$('review-badge');
-  if(n>0){ b.textContent=`📚 ${n} otázk${n===1?'a':n<5?'y':'í'} k zopakování`; b.classList.add('show'); }
-  else b.classList.remove('show');
+  const n=db.wrongAnswers.length, b=$('review-badge'), rb=$('review-mode-btn');
+  if(n>0){
+    b.textContent=`📚 ${n} otázk${n===1?'a':n<5?'y':'í'} k zopakování`;
+    b.classList.add('show'); rb.classList.add('show');
+  } else {
+    b.classList.remove('show'); rb.classList.remove('show');
+  }
 }
 
 document.addEventListener('DOMContentLoaded', init);
